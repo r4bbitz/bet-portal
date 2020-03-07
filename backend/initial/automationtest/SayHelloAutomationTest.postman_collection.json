@@ -1,0 +1,70 @@
+{
+	"info": {
+		"_postman_id": "912682bb-c385-43e8-be46-d92958cad303",
+		"name": "SayHelloAutomationTest",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "SayHello",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "1b76d361-bad5-40ff-9b9d-3921b40aa479",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"  var jsonData = pm.response.json();",
+							"pm.test(\"Your time \"+jsonData.your_time+\" words to say expect \" +pm.variables.get(\"expect_word\"), function () {",
+							"    pm.expect(jsonData.message).to.eql(pm.variables.get(\"expect_word\"));",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "http://localhost:1991/api/v1/sayHello/?timeInput={{input_time}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1991",
+					"path": [
+						"api",
+						"v1",
+						"sayHello",
+						""
+					],
+					"query": [
+						{
+							"key": "timeInput",
+							"value": "{{input_time}}"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

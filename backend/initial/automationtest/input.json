@@ -1,0 +1,28 @@
+[
+	{
+  "expect_word":"Good Night",
+  "input_time":""  
+},
+{
+  "expect_word":"Good Night",
+  "input_time":""  
+},
+{
+  "expect_word":"Good Morning",
+  "input_time":"08:00"  
+}
+,
+{
+  "expect_word":"Good Afternoon",
+  "input_time":"12:00"  
+},
+{
+  "expect_word":"Good Afternoon",
+  "input_time":"12:01"  
+}
+,
+{
+  "expect_word":"Good Evening",
+  "input_time":"18:00"  
+}
+]
